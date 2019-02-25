@@ -38,9 +38,9 @@ http.createServer(function(req, res){ // http.createServer([requestListener])
         board.digitalWrite(8, board.HIGH);
     }  
 
-     res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});   
-res.write("Za test vpišite v brskalnikovo vrstico z naslovom: http://192.168.1.110:8080/1/1 <br>");
-res.write("ali: http://192.168.1.110:8080/0/0<br>");
-res.end("Vrednost operatorja1: " + operator1 + "<br>" + "Vrednost operatorja2: " + operator2);
+    res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});   
+    res.write("Za test vpišite v brskalnikovo vrstico z naslovom: http://192.168.1.110:8080/1/1 <br>");
+    res.write("ali: http://192.168.1.110:8080/0/0<br>");
+    res.end("Vrednost operatorja1: " + operator1 + "<br>" + "Vrednost operatorja2: " + operator2);
 
 }).listen(8080, "192.168.1.110");
