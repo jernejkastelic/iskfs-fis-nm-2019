@@ -10,7 +10,7 @@ http.createServer(function(req, res){ // http.createServer([requestListener])
                                       // "requestListener" je funkcija, ki se avtomatsko doda
                                       // k dogodku 'request'.
     var deli = req.url.split("/"); // razdelimo url glede na znak "/"
-    operator = parseInt(deli[1],10); // 10 osnova številskega sistema, dacimalno (od 2 do 36)
+    operator = parseInt(deli[1], 10); // 10 osnova številskega sistema, dacimalno (od 2 do 36)
         
     if (operator == 0) {
         board.digitalWrite(13, board.LOW);
