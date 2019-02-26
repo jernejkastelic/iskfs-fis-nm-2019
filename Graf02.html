@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Primer z grafom</title>
+
+</head>
+<body>
+Primer z grafom
+<br>
+	<canvas id="mojePlatno" width="800" height="100" style="border: 1px solid #d3d3d3;"></canvas>
+
+	
+	
+
+	<script>
+		var canvas = document.getElementById("mojePlatno");
+		var ctx = canvas.getContext("2d");
+		ctx.strokeStyle = "#FF0000"; //določimo barvo črte
+		
+		var x = new Array(); //novo polje za vrednosti x
+		var y = new Array(); //novo polje za vrednosti y
+
+		x[0] = 10;
+		y[0] = 70;
+		x[1] = 110;
+		y[1] = 20;
+		x[2] = 210;
+		y[2] = 40;
+		x[3] = 310;
+		y[3] = 60;
+		x[4] = 410;
+		y[4] = 10;
+
+		ctx.beginPath(); //začetek izrisa
+		for(var i = 0; i < y.length; i++){
+			ctx.lineTo(x[i], y[i]);
+		}
+		ctx.stroke();
+	</script>
+</body>
+
+
+</html>

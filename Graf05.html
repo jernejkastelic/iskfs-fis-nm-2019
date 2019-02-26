@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Primer z grafom</title>
+
+</head>
+<body onload="load();">
+Primer z grafom
+<br>
+	<canvas id="mojePlatno" width="800" height="100" style="border: 1px solid #d3d3d3;"></canvas>
+
+	
+	
+
+	<script>
+		var canvas = document.getElementById("mojePlatno");
+		var ctx = canvas.getContext("2d");
+		ctx.strokeStyle = "#FF0000"; //določimo barvo črte
+		
+		var x = new Array(); //novo polje za vrednosti x
+		var y = new Array(); //novo polje za vrednosti y
+		var maksGrafX = canvas.width;
+		var maksGrafY = canvas.height;
+		var sprCasovnik; //spremenljivka za casovnik
+
+		//napolnimo polje x z vrednostmi od 0 do širine platna (0, 1, ...., 800)
+		//napolnimo polje y z naključnimi vrednostmi
+
+		for(var i = 0; i < canvas.width; i++){
+			x[i]= i; //vrednost za koordinato x
+			y[i] = Math.random(); //naključna vrednost med 0 in 1
+		}
+
+		function zanka(){
+			y.splice(0, 1); // na mestu 0 v polju y brišemo eno vrednost
+			y[maksGrafX] = Math.random(); // novo vrednost dodamo na koncu polja
+
+			ctx.clearRect(0, 0, maksGrafX, maksGrafY); //brišemo platno
+			ctx.beginPath(); //za zaćetek izrisa
+
+			for(var i = 0; i < y.length; i++){
+			ctx.lineTo(x[i], y[i] * maksGrafY);
+			}
+
+			ctx.stroke();
+
+			sprCasovnik = setTimeout(zanka, 10); //nad 10 ms izvedemo zanko
+		}
+
+		function load(){
+
+		
+
+		ctx.beginPath(); //začetek izrisa
+		for(var i = 0; i < y.length; i++){
+			ctx.lineTo(x[i], y[i] * maksGrafY);
+		}
+		ctx.stroke(); // za prikaz crte
+
+		zanka();
+	}
+	</script>
+</body>
+
+
+</html>

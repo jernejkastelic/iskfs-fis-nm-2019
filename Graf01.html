@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Primer z grafom</title>
+
+</head>
+<body>
+Primer z grafom
+<br>
+	<canvas id="mojePlatno" width="800" height="100" style="border: 1px solid #d3d3d3;"></canvas>
+
+	
+	
+
+	<script>
+		var canvas = document.getElementById("mojePlatno");
+		var ctx = canvas.getContext("2d");
+		ctx.strokeStyle = "#FF0000"; //določimo barvo črte
+		
+		ctx.beginPath(); //začetek izrisa
+		ctx.lineTo(10, 70); // prva črta na platnu
+		ctx.lineTo(110, 20);
+		ctx.lineTo(210, 40);
+		ctx.lineTo(310, 60);
+		ctx.lineTo(410, 10);
+		ctx.stroke();
+	</script>
+</body>
+
+
+</html>
